@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="image" src="./off.jpeg" alt="">
+    <script>
+        const image = document.getElementById("image");
+
+        image.addEventListener('click',(e)=>{
+           const url = e.target.src;
+            const regex = /[^\/]+(?=\/$|$)/;
+            const match = url.match(regex)[0];
+            if (match==='off.jpeg') {
+                e.target.src = 'on.jpeg'
+            }else{
+                e.target.src = 'off.jpeg'
+            }
+
+
+        })
+
+    </script>
+</body>
+</html>
